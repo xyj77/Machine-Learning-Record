@@ -38,13 +38,13 @@ def getFeatureName(filename):
 # 将生成的DataFrame写入excel 防止每次训练的数据不一样
 def getDataSet():
     
-    ad_filename = 'E://tmsc_data/adICVFile.txt'
-    normal_filename = 'E://tmsc_data/normalICVFile.txt'
+    ad_filename = './data/adICVFile.txt'
+    normal_filename = './data/normalICVFile.txt'
      
-    feature_filename = 'E://tmsc_data/nameListFile.txt'
+    feature_filename = './data/nameListFile.txt'
     
-    adIdFilename = 'E://tmsc_data/adIdFile.txt'
-    normalIdFilename = 'E://tmsc_data/normalIdFile.txt'
+    adIdFilename = './data/adIdFile.txt'
+    normalIdFilename = './data/normalIdFile.txt'
     
     ad_data = processData(ad_filename)  # 处理ad类数据
     normal_data = processData(normal_filename)  # 处理normal类数据
@@ -71,7 +71,7 @@ def getDataSet():
     
 def readDataSet():
 
-    df = pd.read_csv('E://tmsc_data/all_shuffle_data_id.csv')
+    df = pd.read_csv('./data/all_shuffle_data_id.csv')
     return df
 
     
@@ -79,4 +79,4 @@ def readDataSet():
 if __name__ == "__main__":
 
     df = getDataSet()
-    df.to_csv('E://tmsc_data/all_shuffle_data_id.csv', index=False, header=True)#写入csv文件
+    df.to_csv('./data/all_shuffle_data_id.csv', index=False, header=True)#写入csv文件
